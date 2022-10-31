@@ -9,6 +9,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("fast")
+@Tag("user")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UserServiceTest {
     private static final User IVAN = User.of(1, "Ivan", "123");
@@ -31,7 +33,7 @@ public class UserServiceTest {
     void usersEmptyIfNoUserAdded() {
         System.out.println("Test 1: " + this);
         var users = userService.getAll();
-        Assertions.assertTrue(users.isEmpty(), () -> "User list should be empty");
+        Assertions.assertTrue(users.isEmpty(), "User list should be empty");
     }
 
     @Test
@@ -46,6 +48,7 @@ public class UserServiceTest {
     }
 
     @Test
+    @Tag("Login")
     void loginSuccessIfUserExist() {
         System.out.println("Test 3: " + this);
         userService.add(IVAN);
@@ -59,6 +62,7 @@ public class UserServiceTest {
     }
 
     @Test
+    @Tag("Login")
     void loginFailIfPasswordIsNotCorrect() {
         System.out.println("Test 4: " + this);
         userService.add(IVAN);
@@ -67,6 +71,7 @@ public class UserServiceTest {
     }
 
     @Test
+    @Tag("Login")
     void loginFailIfUserDoesNotExist() {
         System.out.println("Test 5: " + this);
         userService.add(IVAN);
@@ -87,6 +92,7 @@ public class UserServiceTest {
     }
 
     @Test
+    @Tag("Login")
     void throwExceptionIfUserNameOrPasswordIsNull() {
         System.out.println("Test 7: " + this);
         assertAll(

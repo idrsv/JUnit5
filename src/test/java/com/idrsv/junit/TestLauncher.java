@@ -2,6 +2,7 @@ package com.idrsv.junit;
 
 import org.junit.platform.engine.discovery.DiscoverySelectors;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
+import org.junit.platform.launcher.TagFilter;
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
@@ -20,9 +21,11 @@ public class TestLauncher {
                 .request()
 //                .selectors(DiscoverySelectors.selectClass(UserServiceTest.class))
                 .selectors(DiscoverySelectors.selectPackage("com.idrsv.junit.service"))
+                .filters(
+                        TagFilter.excludeTags("Login")
+                )
 //                .listeners()
                 .build();
-
         launcher.execute(request, summaryGeneratingListener);
 
         try (var writer = new PrintWriter(System.out)) {
