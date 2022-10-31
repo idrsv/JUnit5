@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 4 - жизненный цикл тестов; @TestInstance; @BeforeAfterEachAll">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestLauncher.java" afterDir="false" />
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 5 - Created TestLauncher.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/dto/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
@@ -48,7 +48,6 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -58,7 +57,7 @@
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.4218391",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -77,7 +76,7 @@
       <command value="mvn -N io.takari:maven:0.7.7:wrapper -Dmaven=3.6.3" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestLauncher">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="TestLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.TestLauncher" />
       <module name="junit5-maven-satrter" />
@@ -106,6 +105,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceTest.loginSuccessIfUserExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="junit5-maven-satrter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.idrsv.junit.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.idrsv.junit.service" />
+      <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="loginSuccessIfUserExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceTest.usersEmptyIfNoUserAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit5-maven-satrter" />
       <extension name="coverage">
@@ -124,8 +139,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestLauncher" />
         <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.loginSuccessIfUserExist" />
+        <item itemvalue="Application.TestLauncher" />
         <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
       </list>
     </recent_temporary>
@@ -141,7 +157,7 @@
       <workItem from="1667057503756" duration="1308000" />
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
-      <workItem from="1667135070499" duration="4988000" />
+      <workItem from="1667135070499" duration="7541000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -157,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667137498105</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Lesson 5 - Created TestLauncher.java">
+      <created>1667226064265</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667226064265</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +200,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lesson 1 - Create project, added dependency in pom.xml" />
     <MESSAGE value="Lesson 4 - жизненный цикл тестов; @TestInstance; @BeforeAfterEachAll" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 4 - жизненный цикл тестов; @TestInstance; @BeforeAfterEachAll" />
+    <MESSAGE value="Lesson 5 - Created TestLauncher.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 5 - Created TestLauncher.java" />
   </component>
 </project>
