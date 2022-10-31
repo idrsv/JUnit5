@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 8 - testing exception's">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 9 - @Tag includeTags/excludeTags">
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
@@ -74,7 +73,7 @@
       <command value="mvn -N io.takari:maven:0.7.7:wrapper -Dmaven=3.6.3" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestLauncher">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="TestLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.TestLauncher" />
       <module name="junit5-maven-satrter" />
@@ -153,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestLauncher" />
         <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="Application.TestLauncher" />
         <item itemvalue="JUnit.UserServiceTest.throwExceptionIfUserNameOrPasswordIsNull" />
         <item itemvalue="JUnit.UserServiceTest.loginSuccessIfUserExist" />
         <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
@@ -172,7 +171,7 @@
       <workItem from="1667057503756" duration="1308000" />
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
-      <workItem from="1667135070499" duration="10658000" />
+      <workItem from="1667135070499" duration="10970000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -216,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667231235314</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Lesson 9 - @Tag includeTags/excludeTags">
+      <created>1667231661309</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667231661309</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +246,8 @@
     <MESSAGE value="Lesson 6 - Created Test's in UserServiceTest.java, added Lombok dependency" />
     <MESSAGE value="Lesson 7 - added assertj dependency, refactoring tests" />
     <MESSAGE value="Lesson 8 - testing exception's" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 8 - testing exception's" />
+    <MESSAGE value="Lesson 9 - @Tag includeTags/excludeTags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 9 - @Tag includeTags/excludeTags" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/junit5_maven_satrter$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1667231179871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

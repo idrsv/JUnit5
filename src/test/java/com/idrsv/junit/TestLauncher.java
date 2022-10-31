@@ -22,7 +22,7 @@ public class TestLauncher {
 //                .selectors(DiscoverySelectors.selectClass(UserServiceTest.class))
                 .selectors(DiscoverySelectors.selectPackage("com.idrsv.junit.service"))
                 .filters(
-                        TagFilter.excludeTags("Login")
+                        TagFilter.includeTags("fast")
                 )
 //                .listeners()
                 .build();
