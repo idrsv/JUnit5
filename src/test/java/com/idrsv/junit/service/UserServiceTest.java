@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UserServiceTest {
@@ -83,6 +83,15 @@ public class UserServiceTest {
         assertAll(
                 () -> assertThat(users).containsKeys(IVAN.getID(), DANIL.getID()),
                 () -> assertThat(users).containsValues(IVAN, DANIL)
+        );
+    }
+
+    @Test
+    void throwExceptionIfUserNameOrPasswordIsNull() {
+        System.out.println("Test 7: " + this);
+        assertAll(
+                () -> assertThrows(IllegalArgumentException.class, () -> userService.login(null, "dummy")),
+                () -> assertThrows(IllegalArgumentException.class, () -> userService.login("dummy", null))
         );
     }
 
