@@ -4,12 +4,12 @@ import com.idrsv.junit.dto.User;
 import org.junit.jupiter.api.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class UserServiceTest {
+public class UserServiceTest {
     private UserService userService;
 
 
     @BeforeAll
-    void init () {
+    void init() {
         System.out.println("Before All: ");
     }
 
@@ -42,7 +42,7 @@ class UserServiceTest {
     }
 
     @AfterAll
-    void closeConnectionPool () {
+    void closeConnectionPool() {
         System.out.println("After All: ");
     }
 }
