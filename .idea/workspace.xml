@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 5 - Created TestLauncher.java">
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 6 - Created Test's in UserServiceTest.java, added Lombok dependency">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/dto/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
@@ -157,7 +156,7 @@
       <workItem from="1667057503756" duration="1308000" />
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
-      <workItem from="1667135070499" duration="7541000" />
+      <workItem from="1667135070499" duration="8879000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -180,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667226064265</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lesson 6 - Created Test's in UserServiceTest.java, added Lombok dependency">
+      <created>1667228547801</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667228547801</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +207,7 @@
     <MESSAGE value="Lesson 1 - Create project, added dependency in pom.xml" />
     <MESSAGE value="Lesson 4 - жизненный цикл тестов; @TestInstance; @BeforeAfterEachAll" />
     <MESSAGE value="Lesson 5 - Created TestLauncher.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 5 - Created TestLauncher.java" />
+    <MESSAGE value="Lesson 6 - Created Test's in UserServiceTest.java, added Lombok dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 6 - Created Test's in UserServiceTest.java, added Lombok dependency" />
   </component>
 </project>

@@ -3,7 +3,11 @@ package com.idrsv.junit.service;
 import com.idrsv.junit.dto.User;
 import org.junit.jupiter.api.*;
 
+import java.util.Map;
 import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UserServiceTest {
@@ -36,7 +40,9 @@ public class UserServiceTest {
         userService.add(IVAN);
         userService.add(DANIL);
         var users = userService.getAll();
-        Assertions.assertEquals(2, users.size());
+
+        assertThat(users).hasSize(2);
+//        Assertions.assertEquals(2, users.size());
     }
 
     @Test
@@ -44,8 +50,12 @@ public class UserServiceTest {
         System.out.println("Test 3: " + this);
         userService.add(IVAN);
         Optional<User> userServiceLogin = userService.login(IVAN.getName(), IVAN.getPassword());
-        Assertions.assertTrue(userServiceLogin.isPresent());
-        userServiceLogin.ifPresent(user -> Assertions.assertEquals(IVAN, user));
+
+        assertThat(userServiceLogin).isPresent();
+        userServiceLogin.ifPresent(user -> assertThat(user).isEqualTo(IVAN));
+
+//        Assertions.assertTrue(userServiceLogin.isPresent());
+//        userServiceLogin.ifPresent(user -> Assertions.assertEquals(IVAN, user));
     }
 
     @Test
@@ -62,6 +72,18 @@ public class UserServiceTest {
         userService.add(IVAN);
         Optional<User> userServiceLogin = userService.login("sdsdsd", IVAN.getPassword());
         Assertions.assertTrue(userServiceLogin.isEmpty());
+    }
+
+    @Test
+    void usersConvertedToMapById() {
+        System.out.println("Test 6: " + this);
+        userService.add(IVAN,DANIL);
+        Map<Integer, User> users =  userService.getAllConvertedById();
+
+        assertAll(
+                () -> assertThat(users).containsKeys(IVAN.getID(), DANIL.getID()),
+                () -> assertThat(users).containsValues(IVAN, DANIL)
+        );
     }
 
     @AfterEach
