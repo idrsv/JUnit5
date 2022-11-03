@@ -1,4 +1,4 @@
-package com.idrsv.junit.paramresolver;
+package com.idrsv.junit.extension;
 
 import com.idrsv.junit.service.UserService;
 import org.junit.jupiter.api.extension.ExtensionContext;

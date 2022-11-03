@@ -1,13 +1,16 @@
 package com.idrsv.junit.service;
 
+import com.idrsv.junit.TestBase;
 import com.idrsv.junit.dto.User;
-import com.idrsv.junit.paramresolver.UserServiceParamResolver;
+import com.idrsv.junit.extension.GlobalExtension;
+import com.idrsv.junit.extension.UserServiceParamResolver;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Map;
 import java.util.Optional;
@@ -21,10 +24,11 @@ import static org.junit.jupiter.api.RepeatedTest.LONG_DISPLAY_NAME;
 @Tag("user")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@ExtendWith({
-        UserServiceParamResolver.class
-}) //указываем resolver
-public class UserServiceTest {
+//@ExtendWith({
+//        UserServiceParamResolver.class,
+//        GlobalExtension.class
+//}) //указываем resolver
+public class UserServiceTest extends TestBase {
     private static final User IVAN = User.of(1, "Ivan", "123");
     private static final User DANIL = User.of(2, "Danil", "1234");
     private UserService userService;
@@ -47,7 +51,10 @@ public class UserServiceTest {
     @Test
     @Order(1)
     @DisplayName("Test 1 - Users will be empty if no user added")
-    void usersEmptyIfNoUserAdded() {
+    void usersEmptyIfNoUserAdded() throws IOException {
+        if (true) {
+            throw new RuntimeException();
+        }
         System.out.println("Test 1: " + this);
         var users = userService.getAll();
         Assertions.assertTrue(users.isEmpty(), "User list should be empty");
@@ -124,9 +131,9 @@ public class UserServiceTest {
         }
 
         @Test
-        @RepeatedTest(value = 5, name = LONG_DISPLAY_NAME)
-            //RepetitionInfo - DI об повторениях
-        void loginFailIfUserDoesNotExist(RepetitionInfo repetitionInfo) {
+//        @RepeatedTest(value = 5, name = LONG_DISPLAY_NAME)
+            //RepetitionInfo - DI об повторениях (RepetitionInfo repetitionInfo)
+        void loginFailIfUserDoesNotExist() {
             System.out.println("Test 5: " + this);
             userService.add(IVAN);
             Optional<User> userServiceLogin = userService.login("sdsdsd", IVAN.getPassword());

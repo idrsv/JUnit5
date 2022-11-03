@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 12 - @ParameterizedTest">
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 13 - @Timeouts; Flaky test's и их проверка">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/ConditionalExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/GlobalExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/PostProcessingExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/paramresolver/UserServiceParamResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/UserServiceParamResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +134,9 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.idrsv.junit.service" />
       <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,6 +157,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.TestLauncher" />
+      <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest" />
+      <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest (1)" />
+      <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserServiceTest" />
@@ -172,7 +186,7 @@
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
       <workItem from="1667135070499" duration="11943000" />
-      <workItem from="1667240479895" duration="7329000" />
+      <workItem from="1667240479895" duration="9927000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -244,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667484054909</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Lesson 13 - @Timeouts; Flaky test's и их проверка">
+      <created>1667485443565</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667485443565</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +293,8 @@
     <MESSAGE value="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder" />
     <MESSAGE value="Lesson 11 - DI; ParameterResolver" />
     <MESSAGE value="Lesson 12 - @ParameterizedTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 12 - @ParameterizedTest" />
+    <MESSAGE value="Lesson 13 - @Timeouts; Flaky test's и их проверка" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 13 - @Timeouts; Flaky test's и их проверка" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/junit5_maven_satrter$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1667231179871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
