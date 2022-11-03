@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 11 - DI; ParameterResolver">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/login-test-data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 12 - @ParameterizedTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +172,7 @@
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
       <workItem from="1667135070499" duration="11943000" />
-      <workItem from="1667240479895" duration="6470000" />
+      <workItem from="1667240479895" duration="7329000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -240,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667481576412</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Lesson 12 - @ParameterizedTest">
+      <created>1667484054909</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667484054909</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +271,8 @@
     <MESSAGE value="Lesson 9 - @Tag includeTags/excludeTags" />
     <MESSAGE value="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder" />
     <MESSAGE value="Lesson 11 - DI; ParameterResolver" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 11 - DI; ParameterResolver" />
+    <MESSAGE value="Lesson 12 - @ParameterizedTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 12 - @ParameterizedTest" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/junit5_maven_satrter$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1667231179871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

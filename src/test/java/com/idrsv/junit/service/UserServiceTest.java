@@ -7,13 +7,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
-import javax.swing.text.html.Option;
+
+import java.time.Duration;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.RepeatedTest.LONG_DISPLAY_NAME;
 
 @Tag("fast")
 @Tag("user")
@@ -113,6 +115,7 @@ public class UserServiceTest {
         }
 
         @Test
+        @Disabled("flaky, need to see")
         void loginFailIfPasswordIsNotCorrect() {
             System.out.println("Test 4: " + this);
             userService.add(IVAN);
@@ -121,11 +124,18 @@ public class UserServiceTest {
         }
 
         @Test
-        void loginFailIfUserDoesNotExist() {
+        @RepeatedTest(value = 5, name = LONG_DISPLAY_NAME)
+            //RepetitionInfo - DI об повторениях
+        void loginFailIfUserDoesNotExist(RepetitionInfo repetitionInfo) {
             System.out.println("Test 5: " + this);
             userService.add(IVAN);
             Optional<User> userServiceLogin = userService.login("sdsdsd", IVAN.getPassword());
             Assertions.assertTrue(userServiceLogin.isEmpty());
+        }
+
+        @Test
+        void checkLoginFunctionalityPerformance() {
+            var result = assertTimeout(Duration.ofMillis(200L), () -> userService.login("dummy", IVAN.getPassword()));
         }
 
 
