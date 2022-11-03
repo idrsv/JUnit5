@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/paramresolver/UserServiceParamResolver.java" afterDir="false" />
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 11 - DI; ParameterResolver">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/login-test-data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +76,7 @@
       <command value="mvn -N io.takari:maven:0.7.7:wrapper -Dmaven=3.6.3" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest.usersEmptyIfNoUserAdded">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="TestLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.TestLauncher" />
       <module name="junit5-maven-satrter" />
@@ -84,6 +86,38 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest$LoginTest.loginParametrizedTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="junit5-maven-satrter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.idrsv.junit.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.idrsv.junit.service.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest$LoginTest" />
+      <option name="METHOD_NAME" value="loginParametrizedTest(java.lang.String,java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest$LoginTest.loginParametrizedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="junit5-maven-satrter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.idrsv.junit.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.idrsv.junit.service.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest$LoginTest" />
+      <option name="METHOD_NAME" value="loginParametrizedTest(java.lang.String,java.lang.String,java.util.Optional)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,38 +133,6 @@
       <option name="PACKAGE_NAME" value="com.idrsv.junit.service" />
       <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest.loginSuccessIfUserExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="junit5-maven-satrter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.idrsv.junit.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.idrsv.junit.service" />
-      <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest" />
-      <option name="METHOD_NAME" value="loginSuccessIfUserExist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest.throwExceptionIfUserNameOrPasswordIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="junit5-maven-satrter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.idrsv.junit.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.idrsv.junit.service" />
-      <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest" />
-      <option name="METHOD_NAME" value="throwExceptionIfUserNameOrPasswordIsNull" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
         <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest (1)" />
+        <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest" />
+        <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
         <item itemvalue="Application.TestLauncher" />
-        <item itemvalue="JUnit.UserServiceTest.throwExceptionIfUserNameOrPasswordIsNull" />
-        <item itemvalue="JUnit.UserServiceTest.loginSuccessIfUserExist" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +175,7 @@
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
       <workItem from="1667135070499" duration="11943000" />
-      <workItem from="1667240479895" duration="4223000" />
+      <workItem from="1667240479895" duration="6470000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -231,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667232230270</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Lesson 11 - DI; ParameterResolver">
+      <created>1667481576412</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667481576412</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +266,8 @@
     <MESSAGE value="Lesson 8 - testing exception's" />
     <MESSAGE value="Lesson 9 - @Tag includeTags/excludeTags" />
     <MESSAGE value="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder" />
+    <MESSAGE value="Lesson 11 - DI; ParameterResolver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 11 - DI; ParameterResolver" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/junit5_maven_satrter$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1667231179871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

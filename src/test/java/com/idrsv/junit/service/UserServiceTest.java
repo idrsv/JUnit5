@@ -4,9 +4,13 @@ import com.idrsv.junit.dto.User;
 import com.idrsv.junit.paramresolver.UserServiceParamResolver;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.*;
 
+import javax.swing.text.html.Option;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -59,12 +63,11 @@ public class UserServiceTest {
     }
 
 
-
     @Test
     void usersConvertedToMapById() {
         System.out.println("Test 6: " + this);
-        userService.add(IVAN,DANIL);
-        Map<Integer, User> users =  userService.getAllConvertedById();
+        userService.add(IVAN, DANIL);
+        Map<Integer, User> users = userService.getAllConvertedById();
 
         assertAll(
                 () -> assertThat(users).containsKeys(IVAN.getID(), DANIL.getID()),
@@ -124,6 +127,37 @@ public class UserServiceTest {
             Optional<User> userServiceLogin = userService.login("sdsdsd", IVAN.getPassword());
             Assertions.assertTrue(userServiceLogin.isEmpty());
         }
+
+
+        //Одним тестом закроем несколько кейсов
+        @ParameterizedTest(name = "{displayName} LoginTest")
+        //Предоставляет поток аргументов в метод
+//        @ArgumentsSource()
+//        @NullSource
+//        @EmptySource
+//        @NullAndEmptySource
+//        @ValueSource(strings = {
+//                "Ivan", "Danil"
+//        })
+
+        //Чаще всего
+        @MethodSource("com.idrsv.junit.service.UserServiceTest#getArgumentsForLoginTest")
+        @DisplayName("Login param test")
+//        @CsvFileSource(resources = "/login-test-data.csv", delimiter = ',',numLinesToSkip = 1)
+        void loginParametrizedTest(String name, String password, Optional<User> user) {
+            userService.add(IVAN, DANIL);
+            var mayBeUser = userService.login(name, password);
+            assertThat(mayBeUser).isEqualTo(user);
+        }
+
+
     }
 
+    static Stream<Arguments> getArgumentsForLoginTest() {
+        return Stream.of(
+                Arguments.of("Ivan", "123", Optional.of(IVAN)),
+                Arguments.of("Danil", "1234", Optional.of(DANIL)),
+                Arguments.of("Danil", "dummy", Optional.empty()),
+                Arguments.of("dummy", "1234", Optional.empty()));
+    }
 }
