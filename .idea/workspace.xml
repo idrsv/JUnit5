@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 13 - @Timeouts; Flaky test's и их проверка">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/ConditionalExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/GlobalExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/PostProcessingExtension.java" afterDir="false" />
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 15 - Extension model">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/dao/UserDaoMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/dao/UserDaoSpy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/paramresolver/UserServiceParamResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/UserServiceParamResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/idrsv/junit/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/PostProcessingExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/PostProcessingExtension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/UserServiceParamResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/extension/UserServiceParamResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +67,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.idrsv.junit.dao" />
       <recent name="com.idrsv.junit.dto" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -78,20 +82,7 @@
       <command value="mvn -N io.takari:maven:0.7.7:wrapper -Dmaven=3.6.3" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest">
-    <configuration name="TestLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.TestLauncher" />
-      <module name="junit5-maven-satrter" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.idrsv.junit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.UserServiceTest.shouldDeleteExistedUser">
     <configuration name="UserServiceTest$LoginTest.loginParametrizedTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit5-maven-satrter" />
       <extension name="coverage">
@@ -141,6 +132,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceTest.shouldDeleteExistedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="junit5-maven-satrter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.idrsv.junit.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.idrsv.junit.service" />
+      <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldDeleteExistedUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceTest.usersEmptyIfNoUserAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="junit5-maven-satrter" />
       <extension name="coverage">
@@ -158,7 +165,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.TestLauncher" />
+      <item itemvalue="JUnit.UserServiceTest.shouldDeleteExistedUser" />
       <item itemvalue="JUnit.UserServiceTest" />
       <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest" />
       <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest (1)" />
@@ -166,11 +173,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest.shouldDeleteExistedUser" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest (1)" />
         <item itemvalue="JUnit.UserServiceTest$LoginTest.loginParametrizedTest" />
         <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
-        <item itemvalue="Application.TestLauncher" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +193,8 @@
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
       <workItem from="1667135070499" duration="11943000" />
-      <workItem from="1667240479895" duration="9927000" />
+      <workItem from="1667240479895" duration="14372000" />
+      <workItem from="1667494875992" duration="682000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -265,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667485443565</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Lesson 15 - Extension model">
+      <created>1667488086891</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667488086891</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +309,8 @@
     <MESSAGE value="Lesson 11 - DI; ParameterResolver" />
     <MESSAGE value="Lesson 12 - @ParameterizedTest" />
     <MESSAGE value="Lesson 13 - @Timeouts; Flaky test's и их проверка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 13 - @Timeouts; Flaky test's и их проверка" />
+    <MESSAGE value="Lesson 15 - Extension model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 15 - Extension model" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/junit5_maven_satrter$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1667231179871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

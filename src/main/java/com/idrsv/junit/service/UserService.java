@@ -1,5 +1,6 @@
 package com.idrsv.junit.service;
 
+import com.idrsv.junit.dao.UserDAO;
 import com.idrsv.junit.dto.User;
 import java.util.*;
 
@@ -8,6 +9,16 @@ import static java.util.stream.Collectors.toMap;
 
 public class UserService {
     private final List<User> users = new ArrayList<>();
+
+    private final UserDAO userDAO;
+
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
+    public boolean delete(Integer userId) {
+        return userDAO.delete(userId);
+    }
 
     public List<User> getAll() {
         return users;

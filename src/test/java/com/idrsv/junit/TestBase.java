@@ -8,7 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
         UserServiceParamResolver.class,
         PostProcessingExtension.class,
         ConditionalExtension.class,
-        ThrowableExtension.class
+//        ThrowableExtension.class
 })
 public class TestBase {
 }

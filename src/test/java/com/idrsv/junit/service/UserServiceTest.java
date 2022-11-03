@@ -1,6 +1,7 @@
 package com.idrsv.junit.service;
 
 import com.idrsv.junit.TestBase;
+import com.idrsv.junit.dao.UserDAO;
 import com.idrsv.junit.dto.User;
 import com.idrsv.junit.extension.GlobalExtension;
 import com.idrsv.junit.extension.UserServiceParamResolver;
@@ -8,6 +9,8 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
 
 import java.io.IOException;
@@ -33,6 +36,10 @@ public class UserServiceTest extends TestBase {
     private static final User DANIL = User.of(2, "Danil", "1234");
     private UserService userService;
 
+    private UserDAO userDAO;
+
+
+
     UserServiceTest(TestInfo testInfo) {
         System.out.println();
     }
@@ -43,9 +50,25 @@ public class UserServiceTest extends TestBase {
     }
 
     @BeforeEach
-    void prepare(UserService userService) {
+    void prepare() {
         System.out.println("Before each: " + this);
-        this.userService = userService;
+        this.userDAO = Mockito.spy(new UserDAO());
+        this.userService = new UserService(userDAO);
+    }
+
+    @Test
+    void shouldDeleteExistedUser() {
+        userService.add(IVAN);
+
+        Mockito.doReturn(true).when(userDAO).delete(IVAN.getID());
+        Mockito.doReturn(true).when(userDAO).delete(Mockito.any());
+//        Mockito.when(userDAO.delete(IVAN.getID()))
+//                .thenReturn(true)
+//                .thenReturn(false);
+
+        boolean delete = userService.delete(1);
+
+        assertThat(delete).isTrue();
     }
 
     @Test
@@ -62,6 +85,9 @@ public class UserServiceTest extends TestBase {
 
     @Test
     void usersSizeIfUserAdded() {
+        //given
+        //when
+        //then
         System.out.println("Test 2: " + this);
         userService.add(IVAN);
         userService.add(DANIL);

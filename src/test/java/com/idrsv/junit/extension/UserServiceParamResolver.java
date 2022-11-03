@@ -1,5 +1,6 @@
 package com.idrsv.junit.extension;
 
+import com.idrsv.junit.dao.UserDAO;
 import com.idrsv.junit.service.UserService;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
@@ -21,6 +22,6 @@ public class UserServiceParamResolver implements ParameterResolver {
     public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
         //Store-HashMap своего рода
         var store = extensionContext.getStore(create(UserService.class));
-        return store.getOrComputeIfAbsent(UserService.class, it -> new UserService());
+        return store.getOrComputeIfAbsent(UserService.class, it -> new UserService(new UserDAO()));
     }
 }
