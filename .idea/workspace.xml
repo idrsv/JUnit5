@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 9 - @Tag includeTags/excludeTags">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/TestLauncher.java" afterDir="false" />
+    <list default="true" id="7e1599d8-18f1-4c4e-84fb-9b74821630f0" name="Changes" comment="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/paramresolver/UserServiceParamResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/idrsv/junit/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,22 +42,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.4218391",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4218391&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.idrsv.junit.dto" />
@@ -73,7 +74,7 @@
       <command value="mvn -N io.takari:maven:0.7.7:wrapper -Dmaven=3.6.3" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest">
+  <component name="RunManager" selected="JUnit.UserServiceTest.usersEmptyIfNoUserAdded">
     <configuration name="TestLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.idrsv.junit.TestLauncher" />
       <module name="junit5-maven-satrter" />
@@ -152,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="Application.TestLauncher" />
         <item itemvalue="JUnit.UserServiceTest.throwExceptionIfUserNameOrPasswordIsNull" />
         <item itemvalue="JUnit.UserServiceTest.loginSuccessIfUserExist" />
-        <item itemvalue="JUnit.UserServiceTest.usersEmptyIfNoUserAdded" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +172,8 @@
       <workItem from="1667057503756" duration="1308000" />
       <workItem from="1667058838264" duration="345000" />
       <workItem from="1667059203316" duration="129000" />
-      <workItem from="1667135070499" duration="10970000" />
+      <workItem from="1667135070499" duration="11943000" />
+      <workItem from="1667240479895" duration="4223000" />
     </task>
     <task id="LOCAL-00001" summary="Lesson 1 - Create project, added dependency in pom.xml">
       <created>1667059314166</created>
@@ -222,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667231661309</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder">
+      <created>1667232230270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667232230270</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +256,8 @@
     <MESSAGE value="Lesson 7 - added assertj dependency, refactoring tests" />
     <MESSAGE value="Lesson 8 - testing exception's" />
     <MESSAGE value="Lesson 9 - @Tag includeTags/excludeTags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 9 - @Tag includeTags/excludeTags" />
+    <MESSAGE value="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 10 - @Nested for include class; @DisplayName; @TestMethodOrder" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/junit5_maven_satrter$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1667231179871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

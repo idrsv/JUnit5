@@ -1,7 +1,9 @@
 package com.idrsv.junit.service;
 
 import com.idrsv.junit.dto.User;
+import com.idrsv.junit.paramresolver.UserServiceParamResolver;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Map;
 import java.util.Optional;
@@ -13,11 +15,17 @@ import static org.junit.jupiter.api.Assertions.*;
 @Tag("user")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@ExtendWith({
+        UserServiceParamResolver.class
+}) //указываем resolver
 public class UserServiceTest {
     private static final User IVAN = User.of(1, "Ivan", "123");
     private static final User DANIL = User.of(2, "Danil", "1234");
     private UserService userService;
 
+    UserServiceTest(TestInfo testInfo) {
+        System.out.println();
+    }
 
     @BeforeAll
     void init() {
@@ -25,9 +33,9 @@ public class UserServiceTest {
     }
 
     @BeforeEach
-    void prepare() {
-        userService = new UserService();
+    void prepare(UserService userService) {
         System.out.println("Before each: " + this);
+        this.userService = userService;
     }
 
     @Test
@@ -76,6 +84,7 @@ public class UserServiceTest {
 
     @Tag("Login")
     @Nested
+    @DisplayName("Login Test's")
     class LoginTest {
         @Test
         void throwExceptionIfUserNameOrPasswordIsNull() {
